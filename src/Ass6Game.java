@@ -1,7 +1,6 @@
 // 322384561 - IDO KAPACH
 
 import biuoop.KeyboardSensor;
-
 import java.util.ArrayList;
 import java.util.List;
 

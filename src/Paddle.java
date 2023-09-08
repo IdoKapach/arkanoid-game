@@ -86,8 +86,8 @@ public class Paddle implements Sprite, Collidable {
                 // changing the horizontal velocity.
                 return new Velocity(-1 * currentVelocity.getDx(), currentVelocity.getDy());
             case 2:
-                // changing the vertical velocity.
-                return specialColission(collisionPoint, currentVelocity);
+                // changing the vertical velocity - modified - now the ball change direction regular.
+                return new Velocity(currentVelocity.getDx(), -1 * currentVelocity.getDy());
             case 3:
                 // changing both horizontal and vertical velocities.
                 return new Velocity(-1 * currentVelocity.getDx(), -1 * currentVelocity.getDy());
