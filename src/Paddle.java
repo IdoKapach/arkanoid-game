@@ -23,6 +23,14 @@ public class Paddle implements Sprite, Collidable {
         rect = new Rectangle(new Point(SCREEN_WIDTH / 2 - width / 2, PADDLE_Y_POSITION), width, HEIGHT);
         this.keyboard = keyboard;
     }
+
+    /**
+     * Instantiates a new Paddle.
+     *
+     * @param keyboard the keyboard
+     * @param width    the width
+     * @param color    the color
+     */
     public Paddle(biuoop.KeyboardSensor keyboard, int width, Color color) {
         rect = new Rectangle(new Point(SCREEN_WIDTH / 2 - width / 2, PADDLE_Y_POSITION), width, HEIGHT);
         this.keyboard = keyboard;
@@ -86,7 +94,7 @@ public class Paddle implements Sprite, Collidable {
                 // changing the horizontal velocity.
                 return new Velocity(-1 * currentVelocity.getDx(), currentVelocity.getDy());
             case 2:
-                // changing the vertical velocity - modified - now the ball change direction regular.
+                // changing the vertical velocity - modified - now the ball change direction regularly.
                 return new Velocity(currentVelocity.getDx(), -1 * currentVelocity.getDy());
             case 3:
                 // changing both horizontal and vertical velocities.

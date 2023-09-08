@@ -24,9 +24,7 @@ public class AnimationRunner {
         while (!animation.shouldStop()) {
             long startTime = System.currentTimeMillis(); // timing
             DrawSurface d = gui.getDrawSurface();
-
             animation.doOneFrame(d);
-
             gui.show(d);
             // calculate the remaining time for this frame.
             long usedTime = System.currentTimeMillis() - startTime;
@@ -35,6 +33,12 @@ public class AnimationRunner {
                 this.sleeper.sleepFor(milliSecondLeftToSleep);
             }
         }
+        // screen that appears when all the blocks are gone.
+        Sleeper sleeper = new Sleeper();
+        DrawSurface d = gui.getDrawSurface();
+        animation.doOneFrame(d);
+        gui.show(d);
+        sleeper.sleepFor(100);
     }
 
     /**
